@@ -15,8 +15,9 @@ O projeto usa como base de dados o arquivo .csv que mostra o "Top 1000 TV series
   - pandas
   - matplotlib
   - seaborn
+  - streamlit
 
 Para instalar as bibliotecas necessárias, você pode usar o comando abaixo:
 
 ```bash
-pip install pandas matplotlib seaborn
+pip install pandas matplotlib seaborn streamlit

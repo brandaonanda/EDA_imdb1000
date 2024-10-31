@@ -1,9 +1,15 @@
+#importando a biblioteca streamlit como st, para criação de dashboard
+import streamlit as st
 #importando a biblioteca pandas como pd, para tratamento de dados
 import pandas as pd
 #importando a biblioteca matplotlib e sua sub biblioteca/módulo pyplot como plt, para geração de gráficos
 import matplotlib.pyplot as plt
 #importando a biblioteca seaborn como sns, para geração de gráficos mais estatísticos de alta qualidade e mais fáceis de usar
 import seaborn as sns
+
+# Título do Dashboard
+st.title('Meu Dashboard Interativo')
+
 
 #carregando a planilha "data_imdb1000.csv" devidamente separada em colunas anteriormente.
 #Após a separação em colunas no excel, o sistema python entendeu que seus separadores passaram a ser ";", então foi indicado no código (sep = ";")
@@ -59,6 +65,7 @@ plt.xticks(rotation=45)
 plt.grid(axis='y')
 plt.tight_layout()  # Ajusta o layout para não cortar os rótulos
 plt.show()
+st.pyplot(plt)
 
 # Ordenar o DataFrame pelos números de votos em ordem decrescente e mostrar os 10 primeiros
 top_votados = df.sort_values(by='numVotes', ascending=False)
@@ -86,6 +93,7 @@ plt.text(0.5, 0.5, info_text, ha='center', va='center', fontsize=12, color='blac
 plt.title(" ", fontsize=14)
 plt.tight_layout()
 plt.show()
+st.pyplot(plt)
 
 #Série menos votada
 # Encontrar o título menos votado e o número de votos correspondente
@@ -106,6 +114,7 @@ plt.text(0.5, 0.5, info_text, ha='center', va='center', fontsize=12, color='blac
 plt.title(" ", fontsize=14)
 plt.tight_layout()
 plt.show()
+st.pyplot(plt)
 
 # Criando o gráfico de barras de 10 títulos mais votados
 plt.figure(figsize=(8, 6))
@@ -117,7 +126,7 @@ plt.xticks(rotation=45, ha='right')
 plt.grid(axis='y')
 plt.tight_layout()  # Ajusta o layout para evitar cortes
 plt.show()
-
+st.pyplot(plt)
 
 # Ordenar o DataFrame pelas pontuações em ordem decrescente
 top_pontuados = df.sort_values(by='averageRating', ascending=False).head(10)
@@ -136,6 +145,7 @@ plt.xticks(ticks=top_pontuados['releaseYear'], labels=top_pontuados['releaseYear
 plt.grid(axis='y')
 plt.tight_layout()  # Ajusta o layout para evitar cortes
 plt.show()
+st.pyplot(plt)
 
 # Ordenar o DataFrame pelos números de votos em ordem decrescente
 top_genresvot = df.sort_values(by='numVotes', ascending=False).head(10)
@@ -154,4 +164,5 @@ plt.xticks(rotation=45, ha='right')
 plt.grid(axis='y')
 plt.tight_layout()  # Ajusta o layout para evitar cortes
 plt.show()
+st.pyplot(plt)
 
